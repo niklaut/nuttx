@@ -118,6 +118,8 @@
  *   STM32F723Zx No    No    No   SFPU (176+16+64)  8+8
  *   STM32F723Ix No    No    No   SFPU (176+16+64)  8+8
  *
+ *   STM32F730Vx No    No    No   SFPU (176+16+64)  8+8
+ *
  *   STM32F745Vx Yes   No    No   SFPU (240+16+64)  4+4
  *   STM32F745Zx Yes   No    No   SFPU (240+16+64)  4+4
  *   STM32F745Ix Yes   No    No   SFPU (240+16+64)  4+4
@@ -173,6 +175,7 @@
  *   STM32F779Ax No    Yes   Yes  DFPU (368+16+128) 16+16
  *   ----------- ---- ----- ---- ----- ------------ ------
 
+ * Parts STM32F72xx8 & STM32F72xx8 have 64Kb of FLASH
  * Parts STM32F72xxC & STM32F73xxC have 256Kb of FLASH
  * Parts STM32F72xxE & STM32F73xxE have 512Kb of FLASH
  * Parts STM32F74xxE have 512Kb of FLASH
@@ -199,6 +202,7 @@
   defined(CONFIG_ARCH_CHIP_STM32F723ZE) || \
   defined(CONFIG_ARCH_CHIP_STM32F723IC) || \
   defined(CONFIG_ARCH_CHIP_STM32F723IE) || \
+  defined(CONFIG_ARCH_CHIP_STM32F730V8) || \
   defined(CONFIG_ARCH_CHIP_STM32F745VG) || \
   defined(CONFIG_ARCH_CHIP_STM32F745VE) || \
   defined(CONFIG_ARCH_CHIP_STM32F745IG) || \

@@ -2555,6 +2555,13 @@ config ARCH_BOARD_STM32F746G_DISCO
 		MCU. The STM32F746NGH6  is a 216MHz Cortex-M7 operation with 1024Kb Flash
 		memory and 320Kb SRAM.
 
+config ARCH_BOARD_STM32F7_ORBMULE
+	bool "Orbuculum STM32F7 Orbmule board"
+	depends on ARCH_CHIP_STM32F730V8
+	select ARCH_HAVE_LEDS
+	---help---
+		The STM32F7 Orbmule is a demo board for Cortex-M tracing.
+
 config ARCH_BOARD_STM32F769I_DISCO
 	bool "STMicro STM32F769I-Discovery board"
 	depends on ARCH_CHIP_STM32F769NI
@@ -3408,6 +3415,7 @@ config ARCH_BOARD
 	default "stm32f746g-disco"          if ARCH_BOARD_STM32F746G_DISCO
 	default "stm32f769i-disco"          if ARCH_BOARD_STM32F769I_DISCO
 	default "steval-eth001v1"           if ARCH_BOARD_STEVAL_ETH001V1
+	default "stm32f7-orbmule"           if ARCH_BOARD_STM32F7_ORBMULE
 	default "stm32h747i-disco"          if ARCH_BOARD_STM32H747I_DISCO
 	default "stm32f746-ws"              if ARCH_BOARD_STM32F746_WS
 	default "stm32f777zit6-meadow"      if ARCH_BOARD_MEADOW_F7MICRO
@@ -3917,6 +3925,9 @@ source "boards/arm/stm32f7/stm32f769i-disco/Kconfig"
 endif
 if ARCH_BOARD_STEVAL_ETH001V1
 source "boards/arm/stm32f7/steval-eth001v1/Kconfig"
+endif
+if ARCH_BOARD_STM32F7_ORBMULE
+source "boards/arm/stm32f7/stm32f7-orbmule/Kconfig"
 endif
 if ARCH_BOARD_STM32H747I_DISCO
 source "boards/arm/stm32h7/stm32h747i-disco/Kconfig"
