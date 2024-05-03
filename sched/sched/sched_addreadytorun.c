@@ -28,6 +28,7 @@
 #include <assert.h>
 
 #include <nuttx/queue.h>
+#include <nuttx/itm/itm.h>
 
 #include "irq/irq.h"
 #include "sched/sched.h"
@@ -108,7 +109,7 @@ bool nxsched_add_readytorun(FAR struct tcb_s *btcb)
       btcb->task_state = TSTATE_TASK_READYTORUN;
       ret = false;
     }
-
+  if (!ret) EMDBG_LOG_TASK_RUNNABLE(btcb);
   return ret;
 }
 #endif /* !CONFIG_SMP */
